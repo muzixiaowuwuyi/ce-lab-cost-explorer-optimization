@@ -1,7 +1,7 @@
 # Lab Solution: AWS Cost Explorer and Cost Optimization
 
-**Student Name:** ___________________________  
-**Date:** ___________________________  
+**Student Name:** Guangzheng Li  
+**Date:** 24/04/2026  
 **Lab Completion Time:** ___________ minutes
 
 ---
@@ -24,16 +24,16 @@
 **Screenshot 2: 6-Month Trend**
 ![6-Month Trend](screenshots/02-6-month-trend.png)
 
-**Total spend (last 6 months):** $_______________
+**Total spend (last 6 months):** $3,125.67
 
-**Average monthly:** $_______________
+**Average monthly:** $520.94
 
-**Highest month:** _________________, $_______________
+**Highest month:** October 2025, $843.85
 
 **Reason for highest month:**
 ```
-_____________________________________________________________
-_____________________________________________________________
+EC2-other
+
 ```
 
 ---
@@ -61,11 +61,11 @@ _____________________________________________________________
 ![Top Services](screenshots/04-top-services.png)
 
 **Top 5 Services:**
-1. ___________________________: $_______________
-2. ___________________________: $_______________
-3. ___________________________: $_______________
-4. ___________________________: $_______________
-5. ___________________________: $_______________
+1. EC2-Other: $440.39
+2. Tax: $146.45
+3. VPC (Virtual Private Cloud): $86.46
+4. EC2-Instances: $85.26
+5. Elastic Load Balancing: $45.72
 
 ---
 
@@ -74,14 +74,14 @@ _____________________________________________________________
 **Screenshot 5: EC2 Breakdown**
 ![EC2 Costs](screenshots/05-ec2-breakdown.png)
 
-**Most expensive instance type:** ___________________________
+**Most expensive instance type:** t3a.2xlarge
 
-**Total EC2 cost (last month):** $_______________
+**Total EC2 cost (Oct):** $$525.65 ($440.39 + $85.26)
 
 **Percentage of total bill:** ___________%
 
 **Usage type breakdown:**
-- On-Demand: $_______________
+- On-Demand: $14.66 (Oct)
 - Reserved Instances: $_______________
 - Spot Instances: $_______________
 - Data Transfer: $_______________
@@ -132,6 +132,7 @@ _____________________________________________________________
 
 **Screenshot 8: Cost by Tag**
 ![Tagged Costs](screenshots/08-cost-by-tag.png)
+No tags implemented yet
 
 **Tags analyzed:** ☐ Environment ☐ Project ☐ Team ☐ None available yet
 
@@ -151,11 +152,11 @@ _____________________________________________________________
 ![Cost Allocation Tags](screenshots/09-activated-tags.png)
 
 **AWS-Generated tags activated:**
-- [ ] aws:createdBy
+- [ x  ] aws:createdBy
 - [ ] aws:cloudformation:stack-name
 - [ ] Other: ___________________________
 
-**Activation date:** ___________________________
+**Activation date:** April 24, 2026, 17:08 (UTC+02:00)
 
 ---
 
@@ -169,27 +170,23 @@ _____________________________________________________________
 **Tagging Plan:**
 
 **Tag 1:**
-- Key: ___________________________
-- Values: _______________, _______________, _______________
+- Key: Environment
+- Values: production, staging, development
 - Purpose: _______________________________________________
 
 **Tag 2:**
-- Key: ___________________________
-- Values: _______________, _______________, _______________
+- Key: Project
+- Values: web-app, data-analysis
 - Purpose: _______________________________________________
 
 **Tag 3:**
-- Key: ___________________________
-- Values: _______________, _______________, _______________
+- Key: Team
+- Values: team-alpha, team-beta
 - Purpose: _______________________________________________
 
 **How will these tags help with cost management?**
 ```
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-_____________________________________________________________
-```
+Implementing these tags allows the finance and engineering teams to categorize spending by specific projects or environments. For example, by grouping costs by the Environment tag in Cost Explorer, I can immediately see whether the Development environment is consuming more budget than expected compared to Production. This granularity is essential for accurate chargebacks and identifying resource leaks in non-production environments.```
 
 ---
 
@@ -201,10 +198,10 @@ _____________________________________________________________
 ![Monthly Report](screenshots/11-monthly-report.png)
 
 **Report configuration:**
-- Date range: ___________________________
-- Granularity: ___________________________
-- Group by: ___________________________
-- Chart type: ___________________________
+- Date range: Last 3 months
+- Granularity: Monthly
+- Group by: Service
+- Chart type: Bar chart
 
 ---
 
@@ -239,13 +236,13 @@ _____________________________________________________________
 **Screenshot 14: Anomaly Detection Monitor**
 ![Anomaly Monitor](screenshots/14-anomaly-monitor.png)
 
-**Monitor name:** ___________________________
+**Monitor name:** Default-Services-Monitor
 
-**Threshold:** $_______________
+**Threshold:** $10
 
-**SNS topic:** ___________________________
+**SNS topic:** cost-anomaly-alerts
 
-**Email confirmed:** ☐ Yes ☐ No
+**Email confirmed:** ☐ Yes
 
 ---
 
@@ -253,6 +250,8 @@ _____________________________________________________________
 
 **Screenshot 15: Service Monitor**
 ![Service Monitor](screenshots/15-service-monitor.png)
+
+!!!there isn't Individual services
 
 **Services monitored:**
 - [ ] EC2
@@ -551,13 +550,13 @@ _____________________________________________________________
 
 | Skill | Before Lab | After Lab | Growth |
 |-------|-----------|-----------|--------|
-| Using Cost Explorer | ___/5 | ___/5 | +___ |
-| Analyzing cost trends | ___/5 | ___/5 | +___ |
-| Cost allocation tags | ___/5 | ___/5 | +___ |
-| Identifying optimizations | ___/5 | ___/5 | +___ |
-| Reserved Instance planning | ___/5 | ___/5 | +___ |
-| Cost reporting | ___/5 | ___/5 | +___ |
-| Anomaly detection | ___/5 | ___/5 | +___ |
+| Using Cost Explorer | 0/5 | 2/5 | +2 |
+| Analyzing cost trends | 0/5 | 2/5 | +2 |
+| Cost allocation tags | 0/5 | 2/5 | +2 |
+| Identifying optimizations | 0/5 | 2/5 | +2 |
+| Reserved Instance planning | 0/5 | 2/5 | +2 |
+| Cost reporting | 0/5 | 2/5 | +2 |
+| Anomaly detection | 0/5 | 2/5 | +2 |
 
 ---
 
